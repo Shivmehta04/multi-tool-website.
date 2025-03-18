@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI MultiTools Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-robot"></i> AI MultiTools Pro</h1>
+        <nav id="main-nav">
+            <button class="nav-btn active" data-tool="basic-calc"><i class="fas fa-calculator"></i> Calculator</button>
+            <button class="nav-btn" data-tool="converters"><i class="fas fa-exchange-alt"></i> Converters</button>
+            <button class="nav-btn" data-tool="financial"><i class="fas fa-rupee-sign"></i> Financial</button>
+        </nav>
+    </header>
+
+    <!-- Basic Calculator -->
+    <section class="tool active" id="basic-calc">
+        <div class="calculator">
+            <div class="display">0</div>
+            <div class="buttons">
+                <!-- Calculator buttons -->
+                <button>7</button><button>8</button><button>9</button><button class="operator">+</button>
+                <button>4</button><button>5</button><button>6</button><button class="operator">-</button>
+                <button>1</button><button>2</button><button>3</button><button class="operator">×</button>
+                <button>0</button><button>.</button><button class="operator">÷</button><button class="equal">=</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unit Converters -->
+    <section class="tool" id="converters">
+        <div class="converter-grid">
+            <!-- Length Converter -->
+            <div class="converter">
+                <h3><i class="fas fa-ruler"></i> Length</h3>
+                <input type="number" id="length-value" placeholder="Value">
+                <select id="length-from">
+                    <option value="meter">Meters</option>
+                    <option value="feet">Feet</option>
+                    <option value="inch">Inches</option>
+                </select>
+                <select id="length-to">
+                    <option value="feet">Feet</option>
+                    <option value="meter">Meters</option>
+                    <option value="inch">Inches</option>
+                </select>
+                <button onclick="convertLength()">Convert</button>
+                <div class="result" id="length-result"></div>
+            </div>
+
+            <!-- Add more converters (Weight, Temperature, Time, etc.) -->
+        </div>
+    </section>
+
+    <!-- Financial Tools -->
+    <section class="tool" id="financial">
+        <div class="financial-grid">
+            <!-- GST Calculator -->
+            <div class="calculator">
+                <h3><i class="fas fa-percent"></i> GST Calculator</h3>
+                <input type="number" id="gst-amount" placeholder="Amount (₹)">
+                <select id="gst-rate">
+                    <option value="5">5%</option>
+                    <option value="12">12%</option>
+                    <option value="18">18%</option>
+                </select>
+                <button onclick="calculateGST()">Calculate</button>
+                <div class="result" id="gst-result"></div>
+            </div>
+
+            <!-- Add EMI Calculator, Tax Calculator, etc. -->
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
